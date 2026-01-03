@@ -20,15 +20,15 @@ def clear():
     print("Entries have been deleted!")
 
 def delete():
-  with open("temu.txt","r")as file:
-    lines=file.readlines()
-  view()
-  index=int(input("Which entry do you want to delete?"))
-  lines.pop(index)
+    with open("temu.txt","r")as file:
+        lines=file.readlines()
+    view()
+    index=int(input("Which entry do you want to delete?"))-1
+    lines.pop(index)
 
-  with open("temu.txt","w")as file:
-    for i in lines:
-      file.write(i)
+    with open("temu.txt","w") as file:   
+        for i in lines:
+         file.writelines(i)
 
 while True:
   print("1.Add entry")
@@ -56,4 +56,3 @@ while True:
   
   else:
     print("Please enter a valid choice: ")
-    
